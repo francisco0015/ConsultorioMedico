@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link th:ref="@{/css/bootstrap.css}" rel="stylesheet" href="../css/bootstrap.css" />
+    <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+    <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <a th:href="@{/home/newCita}" class="btn btn-primary">
+      <button class="btn btn-primary" name="button">Agendar cita medica</button>
+    </a>
+    <a th:href="@{/home/listCitas}" class="btn btn-primary">
+      <button class="btn btn-primary" name="button2">Consultar citas</button>
+    </a>
+  </body>
+</html>

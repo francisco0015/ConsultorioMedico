@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+    <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+    <title>Registra tu consulta medica</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Cita medica</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+          <div class="col-12 mt-5">
+            <h1>Nueva cita</h1>
+          </div>
+          <div class="col-12">
+            <form th:action="@{/home/addNewCita}" method="post" th:object="${cita}">
+              <div class="form-row">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Identificador</label>
+                  <input th:field="*{idCita}" th:value="*{idCita}"  type="number" class="form-control" id="idCita" placeholder="Identificador">
+                </div>
+                <div class="mb-3">
+                <div class="dropdown show">
+                  <!--<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Ingrese consultorio
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <div th:each="consultorio :${consultorios}">
+                          <a class="dropdown-item" href="#" th:text="${consultorio.idConsultorio}">Action</a>
+                      </div>
+                  </div>-->
+                  <label for="exampleFormControlInput2" class="form-label">Ingrese numero de consultorio</label>
+                  <input th:field="*{idConsultorio}" th:value="*{idConsultorio}"  type="text" class="form-control" id="idConsultorio" placeholder="ingrese idConsultorio">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput3" class="form-label">Ingrese numero de medico</label>
+                  <input th:field="*{idDoctor}" th:value="*{idDoctor}"  type="text" class="form-control" id="idDoctor" placeholder="ingrese idMedico">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlInput4" class="form-label">Ingrese el horario de consulta</label>
+                  <input th:field="*{horarioConsulta}" th:value="*{horarioConsulta}"  type="text" class="form-control" id="horarioConsulta" placeholder="Horario consulta">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlInput5" class="form-label">Ingrese el nombre del paciente</label>
+                  <input th:field="*{nombrePaciente}" th:value="*{nombrePaciente}"  type="text" class="form-control" id="nombrePaciente" placeholder="Nombre del paciente">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" name="button">Agregar</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
